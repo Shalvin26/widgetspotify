@@ -34,7 +34,7 @@
     },
     "win": {
       "target": "nsis",
-      "icon": "assets/icons8-sound-cloud-24.ico"
+      "icon": "assets/icons8-512-sound-cloud-24.ico"
     }
   }
 }
