@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  background: #fff;
+  color: #111;
+  width: 380px;
+  height: 160px;
+  overflow: hidden;
+  user-select: none;
+  -webkit-app-region: no-drag;
+  border: 1px solid #111;
+  border-top: 2px solid #111;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── NOT CONNECTED ─── */
+#not-connected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+#logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 10px;
+  color: #111;
+}
+
+#logo::after {
+  content: ' : : :';
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #aaa;
+  display: block;
+  text-align: center;
+  margin-top: 2px;
+}
+
+#connect-btn {
+  background: transparent;
+  color: #111;
+  border: 1px solid #111;
+  padding: 6px 18px;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+#connect-btn:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* ─── PLAYER ─── */
+#player {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 12px;
+  gap: 14px;
+}
+
+#player.hidden,
+#not-connected.hidden {
+  display: none;
+}
+
+/* ─── ALBUM ART ─── */
+#album-wrap {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  overflow: hidden;
+  margin-left: 4px;
+  outline: 1px solid #111;
+  cursor: pointer;
+}
+#album-wrap:hover #album-art {
+  filter: grayscale(0%) contrast(1.1);
+  transition: filter 0.2s;
+}
+
+#album-art {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(20%) contrast(1.05);
+}
+
+#album-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+/* ─── RIGHT PANEL ─── */
+#main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 14px 14px 12px 14px;
+  gap: 6px;
+}
+
+/* ─── TRACK INFO ─── */
+#track-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+#track-label {
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: #aaa;
+}
+
+#song-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #111;
+  line-height: 1;
+}
+
+#artist-name {
+  font-size: 8px;
+  color: #888;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: lowercase;
+}
+
+/* ─── PROGRESS ─── */
+#progress-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 4px;
+}
+
+#progress-bar {
+  height: 1px;
+  background: #e0e0e0;
+  position: relative;
+}
+
+#progress-fill {
+  height: 100%;
+  background: #111;
+  width: 0%;
+  transition: width 1s linear;
+  position: relative;
+  z-index: 1;
+}
+
+#progress-fill::after {
+  content: '';
+  position: absolute;
+  right: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  background: #111;
+  border-radius: 50%;
+}
+
+#progress-glow {
+  display: none;
+}
+
+#time-labels {
+  display: flex;
+  justify-content: space-between;
+}
+
+#time-labels span {
+  font-size: 8px;
+  color: #aaa;
+  letter-spacing: 1px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── CONTROLS ─── */
+#controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+#prev-btn,
+#next-btn {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 2px 4px;
+  transition: color 0.15s;
+}
+
+#prev-btn:hover,
+#next-btn:hover {
+  color: #111;
+}
+
+#play-pause-btn {
+  background: #111 !important;
+  color: #fff !important;
+  border: none !important;
+  font-family: 'Space Mono', monospace !important;
+  font-size: 9px !important;
+  letter-spacing: 2px !important;
+  cursor: pointer !important;
+  padding: 5px 12px !important;
+  transition: background 0.15s !important;
+}
+
+#play-pause-btn:hover {
+  background: #333 !important;
+  transform: none !important;
+}

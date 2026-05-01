@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <div id="not-connected">
+      <div id="logo">OPIUM</div>
+      <button id="connect-btn">LINK SPOTIFY</button>
+    </div>
+
+    <div id="player" class="hidden">
+      <div id="album-wrap">
+      <img id="album-art" src="" alt="">
+      <div id="album-overlay"></div>
+      </div>
+
+      <div id="main">
+        <div id="track-info">
+        <div id="track-label">: track</div>
+          <div id="song-name">NO TRACK</div>
+          <div id="artist-name">———</div>
+        </div>
+
+        <div id="progress-wrap">
+          <div id="progress-bar">
+            <div id="progress-fill"></div>
+            <div id="progress-glow"></div>
+          </div>
+          <div id="time-labels">
+            <span id="time-current">0:00</span>
+            <span id="time-total">0:00</span>
+          </div>
+        </div>
+
+        <div id="controls">
+        <button id="prev-btn">« prev</button>
+        <button id="play-pause-btn">play</button>
+        <button id="next-btn">next »</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>
